@@ -1,164 +1,288 @@
+/* Genel Stil Ayarları */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-body.dark-mode {
-    background-color: #121212;
-    color: #f4f4f4;
+/* Header Stilleri */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #333;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.header {
-    background-color: #fff;
-    padding: 20px;
-    margin-bottom: 30px;
-    transition: background-color 0.3s ease;
+.logo {
     display: flex;
     align-items: center;
+    font-size: 28px;
+    font-weight: 600;
 }
 
-body.dark-mode .header {
-    background-color: #222;
+.logo i {
+    margin-right: 10px;
 }
 
-.header h1 {
-    margin: 0;
-    transition: color 0.3s ease;
+.theme-switcher {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #333;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    transition: background-color 0.3s;
 }
 
-body.dark-mode .header h1 {
+.theme-switcher i {
+    color: #f1c40f;
+}
+
+/* İkon Stilleri */
+body.dark-mode .theme-switcher i {
+    color: #f1c40f;
+}
+
+/* Menü Stilleri */
+.menu {
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.menu-items {
+    display: flex;
+    gap: 20px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    border-radius: 12px;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
+    width: auto;
+    min-width: 180px;
+    height: 60px;
+}
+
+/* Kaydırma çubuğunu gizleme */
+.menu::-webkit-scrollbar {
+    display: none;
+}
+
+.menu {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.menu-item:hover, .menu-item.active {
+    background-color: #007bff;
     color: #fff;
 }
 
-.dark-mode-toggle {
-    cursor: pointer;
-    position: absolute;
-    top: 20px;
-    right: 20px;
+.menu-item .icon {
+    font-size: 24px;
+    margin-right: 10px;
 }
 
-.dark-mode-toggle i {
-    font-size: 1.5rem;
-    transition: color 0.3s ease;
+.menu-item .text {
+    font-size: 16px;
 }
 
-body.dark-mode .dark-mode-toggle i {
-    color: #f4f4f4;
+/* İçerik Bölümleri */
+.content {
+    display: none;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.card {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden; 
-    width: 100%;
-    margin-bottom: 30px;
-    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+.content.active {
+    display: block;
 }
 
-.card:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+.test {
+    margin-top: 20px;
 }
 
-.card-header {
+.test-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background: linear-gradient(to right, #007bff, #0056b3);
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-body.dark-mode .card-header {
-    background: linear-gradient(to right, #343a40, #454d55);
-}
-
-.card-header h2 {
-    margin: 0;
-    font-size: 1.4rem;
-    transition: color 0.3s ease;
-}
-
-.card-header i {
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.card-content {
-    padding: 20px 30px;
-    display: block;
-    max-height: 100px; 
-    overflow: hidden; 
-    transition: max-height 0.5s ease-in-out; 
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-
-.card-content.active { 
-    max-height: 1000px; 
-}
-
-
-body.dark-mode .card {
-    background-color: #222;
-}
-
-body.dark-mode .card-content {
-    color: #f4f4f4;
-}
-
-.footer {
-    background-color: #333;
-    padding: 20px;
-    text-align: center;
-}
-
-.social-media a {
-    color: white;
-    margin: 0 10px;
-    font-size: 1.5rem;
-    transition: color 0.3s ease;
-}
-
-.social-media a:hover {
-    color: #007bff;
-}
-
-.navigation {
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.navigation button {
-    background-color: transparent;
-    color: #007bff;
+.text-size-btn {
+    background: transparent;
     border: none;
-    padding: 10px 15px;
-    font-size: 1rem;
-    border-radius: 5px;
     cursor: pointer;
-    transition: color 0.3s ease;
+    font-size: 20px;
+    color: #007bff;
+    transition: color 0.3s;
 }
 
-.navigation button:disabled {
-    color: #ccc;
-    cursor: not-allowed;
-}
-
-.navigation button:hover:not([disabled]) {
+.text-size-btn:hover {
     color: #0056b3;
 }
 
-.navigation button i {
-    margin-right: 5px;
+.test-question {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.test-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.test-options label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s;
+}
+
+.test-options label:hover {
+    background-color: #e0e0e0;
+}
+
+.test-options input {
+    margin-right: 10px;
+    accent-color: #007bff;
+}
+
+/* Karanlık Mod için Ek Stil Ayarları */
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-mode header {
+    background-color: #222;
+}
+
+body.dark-mode .menu-item {
+    background-color: #444;
+    color: #fff;
+}
+
+body.dark-mode .menu-item:hover, body.dark-mode .menu-item.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+body.dark-mode .content {
+    background-color: #444;
+    color: #fff;
+}
+
+body.dark-mode .test-options label {
+    background-color: #555;
+    color: #fff;
+}
+
+body.dark-mode .test-options label:hover {
+    background-color: #666;
+}
+
+body.dark-mode .correct {
+    background-color: #004d00;
+    color: #fff;
+}
+
+body.dark-mode .incorrect {
+    background-color: #6c0000;
+    color: #fff;
+}
+
+/* Doğru ve Yanlış Şıkların Buton Renkleri */
+.correct.selected {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.incorrect.selected {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+body.dark-mode .correct.selected {
+    background-color: #004d00;
+    color: #fff;
+}
+
+body.dark-mode .incorrect.selected {
+    background-color: #6c0000;
+    color: #fff;
+}
+
+/* Görsel Alanı */
+.image-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.image-container img {
+    max-width: 100%; /* Resmin genişliği, kapsayıcı alanı aşmayacak şekilde ayarlanır */
+    height: auto; /* Yükseklik, genişliğe orantılı olarak ayarlanır */
+    border-radius: 8px; /* Köşeleri yuvarlatır */
+    object-fit: cover; /* Resmin kapsayıcıya uygun şekilde kesilmesini sağlar */
+}
+
+/* İçerik Başlıkları */
+.content-header {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.content-header h3 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* İçerik Metinleri */
+.section-content {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Mobil Uyumlu Görsel Alanı */
+@media (max-width: 600px) {
+    .content-header h3 {
+        font-size: 16px;
+    }
+
+    .section-content {
+        font-size: 14px;
+    }
+
+    .image-container img {
+        /* Mobil uyum için resmin kapsayıcıya tamamen uymasını sağlar */
+        width: 100%;
+        height: auto;
+    }
 }
