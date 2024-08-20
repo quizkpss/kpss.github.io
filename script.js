@@ -27,7 +27,21 @@ function showSection(sectionId) {
         item.classList.remove('active');
     });
     document.querySelector(`[onclick="showSection('${sectionId}')"]`).classList.add('active');
+
+    // Son ziyaret edilen sayfayı kaydet
+    localStorage.setItem('lastVisitedSection', sectionId);
 }
+
+// Sayfa yüklendiğinde son ziyaret edilen sayfayı göster
+document.addEventListener('DOMContentLoaded', function() {
+    const lastVisitedSection = localStorage.getItem('lastVisitedSection');
+    if (lastVisitedSection) {
+        showSection(lastVisitedSection);
+    } else {
+        // Varsayılan olarak ana sayfayı göster (bu satır kaldırıldı)
+        // showSection('home');
+    }
+});
 
 // Test cevabını kontrol etme fonksiyonu
 const answerKeys = {
@@ -116,6 +130,3 @@ document.querySelectorAll('.social-media a').forEach(icon => {
         window.open(targetUrl, '_blank');
     });
 });
-
-// Varsayılan olarak ana sayfayı göster
-showSection('home');
