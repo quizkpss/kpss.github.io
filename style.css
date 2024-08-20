@@ -275,6 +275,43 @@ body.dark-mode .check-answer-btn {
     color: #fff;
 }
 
+/* Yukarı Çık Butonu Stilleri */
+#scrollToTop {
+    position: fixed;
+    bottom: 20px; /* Ekranın altından 20px */
+    right: 20px; /* Ekranın sağından 20px */
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    z-index: 1000; /* Diğer içeriklerin üstünde olması için */
+    opacity: 0; /* Başlangıçta görünmez */
+    visibility: hidden; /* Başlangıçta görünmez */
+}
+
+#scrollToTop.show {
+    opacity: 1; /* Butonu görünür yap */
+    visibility: visible; /* Butonu görünür yap */
+}
+
+#scrollToTop:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+#scrollToTop i {
+    font-size: 20px;
+}
+
+
 body.dark-mode .correct.selected {
     background-color: #004d00;
     color: #fff;
