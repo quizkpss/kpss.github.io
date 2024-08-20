@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QKPSS GÜNCEL BİLGİLER</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-book"></i> QKPSS GÜNCEL BİLGİLER
+        </div>
+        <button class="theme-switcher" id="theme-switcher">
+            <i class="fas fa-sun"></i>
+        </button>
+    </header>
+
+    <nav class="menu">
+        <div class="menu-items">
+            <div class="menu-item" data-section="home" onclick="showSection('home')">
+                <i class="fas fa-solid fa-pen icon"></i>
+                <span class="text">Yazarlar</span>
+            </div>
+            <div class="menu-item" data-section="books" onclick="showSection('books')">
+                <i class="fas fa-solid fa-flask icon"></i>
+                <span class="text">Bilim ve Sanat</span>
+            </div>
+            <div class="menu-item" data-section="charts" onclick="showSection('charts')">
+                <i class="fas fa fa-flag icon"></i>
+                <span class="text">Spor</span>
+            </div>
+            <div class="menu-item" data-section="calendar" onclick="showSection('calendar')">
+                <i class="fas fa fa-plane icon"></i>
+                <span class="text">Vefat Edenler</span>
+            </div>
+            <div class="menu-item" data-section="settings" onclick="showSection('settings')">
+                <i class="fas fa fa-trophy icon"></i>
+                <span class="text">Ödüller</span>
+            </div>
+            <div class="menu-item" data-section="culture" onclick="showSection('culture')">
+                <i class="fas fa fa-theater-masks icon"></i>
+                <span class="text">Kültür</span>
+            </div>
+            <div class="menu-item" data-section="about" onclick="showSection('about')">
+                <i class="fas fa fa-bookmark icon"></i>
+                <span class="text">İlkler</span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Ana Sayfa İçeriği -->
+        <section id="home" class="content">
+            <div class="test-header">
+                <button class="text-size-btn" data-target="home" id="decrease-text-size-home"><i class="fas fa-minus"></i></button>
+                <h2>Yazarlar Günün Sorusu</h2>
+                <button class="text-size-btn" data-target="home" id="increase-text-size-home"><i class="fas fa-plus"></i></button>
+            </div>
+            <div class="test">
+                <p class="test-question">Ana sayfanın amacı nedir?</p>
+                <div class="test-options">
+                    <label><input type="radio" name="home-test" value="A"> Tanıtım</label>
+                    <label><input type="radio" name="home-test" value="B"> Bilgilendirme</label>
+                    <button class="check-btn">Kontrol Et</button>
+                </div>
+                <div class="result"></div>
+            </div>
+            <div class="image-container">
+                <img src="https://i.hizliresim.com/iau03ff.jpg" alt="Ana Sayfa Görseli">
+            </div>
+            <div class="content-header">
+                <h3>Yazarlar İçeriği Başlığı</h3>
+            </div>
+            <div class="section-content">
+                <p>Burada ana sayfa hakkında bilgiler olacak.</p>
+            </div>
+        </section>
+
+        <!-- Kitaplar İçeriği -->
+        <section id="books" class="content">
+            <div class="test-header">
+                <button class="text-size-btn" data-target="books" id="decrease-text-size-books"><i class="fas fa-minus"></i></button>
+                <h2>Bilim ve Sanat Günün Sorusu</h2>
+                <button class="text-size-btn" data-target="books" id="increase-text-size-books"><i class="fas fa-plus"></i></button>
+            </div>
+            <div class="test">
+                <p class="test-question">En popüler kitap türü nedir?</p>
+                <div class="test-options">
+                    <label><input type="radio" name="books-test" value="A"> Roman</label>
+                    <label><input type="radio" name="books-test" value="B"> Bilim Kurgu</label>
+                    <button class="check-btn">Kontrol Et</button>
+                </div>
+                <div class="result"></div>
+            </div>
+            <div class="image-container">
+                <img src="https://i.hizliresim.com/h4jf3i4.jpg" alt="Kitaplar Görseli">
+            </div>
+            <div class="content-header">
+                <h3>Bilim ve Sanat Günün İçeriği</h3>
+            </div>
+            <div class="section-content">
+                <p>Burada kitaplar hakkında bilgiler olacak.</p>
+            </div>
+        </section>
+
+        <!-- Grafik İçeriği -->
+        <section id="charts" class="content">
+            <div class="test-header">
+                <button class="text-size-btn" data-target="charts" id="decrease-text-size-charts"><i class="fas fa-minus"></i></button>
+                <h2>Spor Günün Sorusu</h2>
+                <button class="text-size-btn" data-target="charts" id="increase-text-size-charts"><i class="fas fa-plus"></i></button>
+            </div>
+            <div class="test">
+                <p class="test-question">Grafiklerin amacı nedir?</p>
+                <div class="test-options">
+                    <label><input type="radio" name="charts-test" value="A"> Veri Görselleştirme</label>
+                    <label><input type="radio" name="charts-test" value="B"> Eğlence</label>
+                    <button class="check-btn">Kontrol Et</button>
+                </div>
+                <div class="result"></div>
+            </div>
+            <div class="image-container">
+                <img src="https://i.hizliresim.com/khiprhs.jpg" alt="Grafikler Görseli">
+            </div>
+            <div class="content-header">
+                <h3>Spor İçeriği Başlığı</h3>
+            </div>
+            <div class="section-content">
+                <p>Burada grafikler hakkında bilgiler olacak.</p>
+            </div>
+        </section>
+
+        <!-- Takvim İçeriği -->
+        <section id="calendar" class="content">
+            <div class="test-header">
+                <button class="text-size-btn" data-target="calendar" id="decrease-text-size-calendar"><i class="fas fa-minus"></i></button>
+                <h2>Vefat Edenler Günün Sorusu</h2>
+                <button class="text-size-btn" data-target="calendar" id="increase-text-size-calendar"><i class="fas fa-plus"></i></button>
+            </div>
+            <div class="test">
+                <p class="test-question">Takvimlerde ne tür bilgiler bulunur?</p>
+                <div class="test-options">
+                    <label><input type="radio" name="calendar-test" value="A"> Tarihler</label>
+                    <label><input type="radio" name="calendar-test" value="B"> Hava Durumu</label>
+                    <button class="check-btn">Kontrol Et</button>
+                </div>
+                <div class="result"></div>
+            </div>
+            <div class="image-container">
+                <img src="https://r.resimlink.com/WNCuxlYFS.jpg" alt="Takvim Görseli">
+            </div>
+            <div class="content-header">
+                <h3>Vefat Edenler İçeriği Başlığı</h3>
+            </div>
+            <div class="section-content">
+                <p>Burada takvim hakkında bilgiler olacak.</p>
+            </div>
+        </section>
+
+        <!-- Ayarlar İçeriği -->
+        <section id="settings" class="content">
+            <div class="test-header">
+                <button class="text-size-btn" data-target="settings" id="decrease-text-size-settings"><i class="fas fa-minus"></i></button>
+                <h2>Ödüller Günün Testi</h2>
+                <button class="text-size-btn" data-target="settings" id="increase-text-size-settings"><i class="fas fa-plus"></i></button>
+            </div>
+            <div class="test">
+                <p class="test-question">Ayarlar bölümünde ne tür seçenekler bulunur?</p>
+                <div class="test-options">
+                    <label><input type="radio" name="settings-test" value="A"> Kişisel Ayarlar</label>
+                    <label><input type="radio" name="settings-test" value="B"> Uygulama Ayarları</label>
+                    <button class="check-btn">Kontrol Et</button>
+                </div>
+                <div class="result"></div>
+            </div>
+            <div class="image-container">
+                <img src="https://i.hizliresim.com/pwltf4t.jpg" alt="Ayarlar Görseli">
+            </div>
+            <div class="content-header">
+                <h3>Ödüller İçeriği Başlığı</h3>
+            </div>
+            <div class="section-content">
+                <p>Burada ayarlar hakkında bilgiler olacak.</p>
+            </div>
+        </section>
+
+        <!-- Kültür İçeriği -->
+        <section id="culture" class="content">
+            <div class="test-header">
+                <button class="text-size-btn" data-target="culture" id="decrease-text-size-culture"><i class="fas fa-minus"></i></button>
+                <h2>Kültür Günün Sorusu</h2>
+                <button class="text-size-btn" data-target="culture" id="increase-text-size-culture"><i class="fas fa-plus"></i></button>
+            </div>
+            <div class="test">
+                <p class="test-question">Kültür ile ilgili hangi bilgi türleri bulunur?</p>
+                <div class="test-options">
+                    <label><input type="radio" name="culture-test" value="A"> Gelenekler</label>
+                    <label><input type="radio" name="culture-test" value="B"> Sanat</label>
+                    <button class="check-btn">Kontrol Et</button>
+                </div>
+                <div class="result"></div>
+            </div>
+            <div class="image-container">
+                <img src="https://i.hizliresim.com/8mrg7c0.jpg" alt="Kültür Görseli">
+            </div>
+            <div class="content-header">
+                <h3>Kültür İçeriği Başlığı</h3>
+            </div>
+            <div class="section-content">
+                <p>Burada kültür hakkında bilgiler olacak.</p>
+            </div>
+        </section>
+
+        <!-- Hakkında İçeriği -->
+        <section id="about" class="content">
+            <div class="test-header">
+                <button class="text-size-btn" data-target="about" id="decrease-text-size-about"><i class="fas fa-minus"></i></button>
+                <h2>İlkler Günün Testi</h2>
+                <button class="text-size-btn" data-target="about" id="increase-text-size-about"><i class="fas fa-plus"></i></button>
+            </div>
+            <div class="test">
+                <p class="test-question">Hakkında bölümünde hangi bilgiler bulunur?</p>
+                <div class="test-options">
+                    <label><input type="radio" name="about-test" value="A"> Şirket Bilgileri</label>
+                    <label><input type="radio" name="about-test" value="B"> Ürün Bilgileri</label>
+                    <button class="check-btn">Kontrol Et</button>
+                </div>
+                <div class="result"></div>
+            </div>
+            <div class="image-container">
+                <img src="https://i.hizliresim.com/8mrg7c0.jpg" alt="Hakkında Görseli">
+            </div>
+            <div class="content-header">
+                <h3>İlkler İçeriği Başlığı</h3>
+            </div>
+            <div class="section-content">
+                <p>Burada hakkında bilgiler olacak.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="social-media-icons">
+        <a href="#" onclick="openApp('instagram')" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="#" onclick="openApp('tiktok')" class="social-icon"><i class="fab fa-tiktok"></i></a>
+        <a href="#" onclick="openApp('telegram')" class="social-icon"><i class="fab fa-telegram-plane"></i></a>
+    </footer>
+
+       <!-- Yukarı Çık Butonu -->
+    <button id="scrollToTop" aria-label="Yukarı Çık">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- JavaScript Dosyası -->
+    <script src="script.js"></script>
+</body>
+</html>
