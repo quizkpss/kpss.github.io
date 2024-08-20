@@ -32,7 +32,6 @@ function showSection(sectionId) {
     document.querySelector(`[onclick="showSection('${sectionId}')"]`).classList.add('active');
 }
 
-
 // Test cevabını kontrol etme fonksiyonu
 const answerKeys = {
     home: 'A',     // Ana sayfa testi için doğru cevap
@@ -44,45 +43,35 @@ const answerKeys = {
     culture: 'B'   // Kültür testi için doğru cevap
 };
 
-function handleTestOptionChange(event) {
-    const testSectionId = event.target.name.split('-')[0];
-    const correctAnswer = answerKeys[testSectionId];
-    const selectedOption = document.querySelector(`#${testSectionId} input[name="${event.target.name}"]:checked`);
-    
-    // Önce tüm seçeneklerin arka plan rengini sıfırla
-    document.querySelectorAll(`#${testSectionId} .test-options label`).forEach(label => {
-        label.classList.remove('correct', 'incorrect', 'selected');
-    });
-    
-    if (selectedOption) {
-        const answerValue = selectedOption.value;
-        if (answerValue === correctAnswer) {
-            selectedOption.parentElement.classList.add('correct', 'selected');
-        } else {
-            selectedOption.parentElement.classList.add('incorrect', 'selected');
-        }
-    }
-}
-
-// Olay dinleyicilerini ekleyin
 document.querySelectorAll('.test-options input').forEach(input => {
-    input.addEventListener('change', handleTestOptionChange);
-    input.addEventListener('click', handleTestOptionChange); // Mobil cihazlar için
-    input.addEventListener('touchend', handleTestOptionChange); // Mobil cihazlar için dokunma desteği
+    input.addEventListener('change', function() {
+        const testSectionId = this.name.split('-')[0];
+        const correctAnswer = answerKeys[testSectionId];
+        const selectedOption = document.querySelector(`#${testSectionId} input[name="${this.name}"]:checked`);
+        
+        // Önce tüm seçeneklerin arka plan rengini sıfırla
+        document.querySelectorAll(`#${testSectionId} .test-options label`).forEach(label => {
+            label.classList.remove('correct', 'incorrect', 'selected');
+        });
+        
+        if (selectedOption) {
+            const answerValue = selectedOption.value;
+            if (answerValue === correctAnswer) {
+                selectedOption.parentElement.classList.add('correct', 'selected');
+            } else {
+                selectedOption.parentElement.classList.add('incorrect', 'selected');
+            }
+        }
+    });
 });
 
 // Metin boyutunu ayarlama fonksiyonu
 function adjustTextSize(sectionId, adjustment) {
     const testSection = document.getElementById(sectionId);
-    const testHeaders = testSection.querySelectorAll('.test-header h2');
     const contentHeaders = testSection.querySelectorAll('.content-header h3');
     const sectionContent = testSection.querySelectorAll('.section-content p');
 
-    testHeaders.forEach(header => {
-        const currentSize = parseFloat(window.getComputedStyle(header).fontSize);
-        header.style.fontSize = (currentSize + adjustment) + 'px';
-    });
-
+    // Test başlığı hariç diğer öğelerin boyutunu ayarla
     contentHeaders.forEach(header => {
         const currentSize = parseFloat(window.getComputedStyle(header).fontSize);
         header.style.fontSize = (currentSize + adjustment) + 'px';
@@ -106,3 +95,20 @@ document.querySelectorAll('.test-header .text-size-btn').forEach(button => {
 // Varsayılan olarak ana sayfayı göster
 showSection('home');
 
+// Kontrol Et butonu tıklama olayı
+document.querySelectorAll('.check-button').forEach(button => {
+    button.addEventListener('click', function() {
+        const testSectionId = this.dataset.section;
+        const selectedOption = document.querySelector(`#${testSectionId} input[name="${testSectionId}-options"]:checked`);
+        const correctAnswer = answerKeys[testSectionId];
+
+        if (selectedOption) {
+            const answerValue = selectedOption.value;
+            if (answerValue === correctAnswer) {
+                selectedOption.parentElement.classList.add('correct', 'selected');
+            } else {
+                selectedOption.parentElement.classList.add('incorrect', 'selected');
+            }
+        }
+    });
+});
