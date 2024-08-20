@@ -46,6 +46,23 @@ header {
     color: #f1c40f;
 }
 
+/* Seçili seçenekler için stil ayarları */
+.test-options input:checked + label {
+    background-color: #007bff; /* Renk değişikliği */
+    color: #fff;
+}
+
+/* Doğru ve yanlış cevaplar için stil ayarları */
+.test-options input:checked.correct + label {
+    background-color: #28a745; /* Doğru cevap rengi */
+    color: #fff;
+}
+
+.test-options input:checked.incorrect + label {
+    background-color: #dc3545; /* Yanlış cevap rengi */
+    color: #fff;
+}
+
 /* İkon Stilleri */
 body.dark-mode .theme-switcher i {
     color: #f1c40f;
