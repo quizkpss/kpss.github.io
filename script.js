@@ -131,18 +131,18 @@ document.querySelectorAll('.social-media a').forEach(icon => {
     });
 });
 
-// Yukarı çık butonu gösterme ve işlevselliği
-const scrollToTopButton = document.getElementById('scrollToTop');
+// Yukarı çık butonunu göster/gizle ve işlevselliğini ayarla
+const scrollToTopBtn = document.getElementById('scrollToTop');
 
-window.addEventListener('scroll', function() {
-    if (window.scrollY > 300) {
-        scrollToTopButton.style.display = 'block';
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) { // Sayfa 300px kaydırıldığında butonu göster
+        scrollToTopBtn.classList.add('show');
     } else {
-        scrollToTopButton.style.display = 'none';
+        scrollToTopBtn.classList.remove('show');
     }
 });
 
-scrollToTopButton.addEventListener('click', function() {
+scrollToTopBtn.addEventListener('click', () => {
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
