@@ -63,6 +63,13 @@ document.querySelectorAll('.test-options input').forEach(input => {
             }
         }
     });
+
+    // Mobil cihazlarda anında geri bildirim için click olayını da dinle
+    input.addEventListener('click', function() {
+        if (this.checked) {
+            this.dispatchEvent(new Event('change')); // 'change' olayını tetikle
+        }
+    });
 });
 
 // Metin boyutunu ayarlama fonksiyonu
@@ -99,5 +106,3 @@ document.querySelectorAll('.test-header .text-size-btn').forEach(button => {
 
 // Varsayılan olarak ana sayfayı göster
 showSection('home');
-
-
