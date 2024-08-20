@@ -34,12 +34,24 @@ header {
     }
 }
 
+/* Logo stil ayarları */
 .logo {
     display: flex;
     align-items: center;
     font-size: 28px;
     font-weight: 600;
+    white-space: nowrap; /* Metnin tek satırda kalmasını sağlar */
+    overflow: hidden; /* Taşan metinleri gizler */
+    text-overflow: ellipsis; /* Taşan metni "..." ile gösterir */
 }
+
+/* Mobil uyumlu stil ayarları */
+@media (max-width: 600px) {
+    .logo {
+        font-size: 20px; /* Mobil cihazlarda daha küçük font boyutu */
+    }
+}
+
 
 .logo i {
     margin-right: 10px;
