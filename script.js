@@ -34,40 +34,36 @@ function showSection(sectionId) {
 
 // Test cevabını kontrol etme fonksiyonu
 const answerKeys = {
-    home: 'A',
-    books: 'B',
-    charts: 'A',
-    calendar: 'A',
-    settings: 'A',
-    about: 'A',
-    culture: 'A' // Kültür testi için doğru cevap
+    home: 'A',     // Ana sayfa testi için doğru cevap
+    books: 'B',    // Kitaplar testi için doğru cevap
+    charts: 'A',   // Grafik testi için doğru cevap
+    calendar: 'A', // Takvim testi için doğru cevap
+    settings: 'A', // Ayarlar testi için doğru cevap
+    about: 'A',    // Hakkında testi için doğru cevap
+    culture: 'B'   // Kültür testi için doğru cevap
 };
 
-function checkAnswers() {
-    document.querySelectorAll('.test-options input').forEach(input => {
-        input.addEventListener('change', function() {
-            const testSectionId = this.name.split('-')[0];
-            const correctAnswer = answerKeys[testSectionId];
-            const selectedOption = document.querySelector(`#${testSectionId} input[name="${this.name}"]:checked`);
-            
-            // Önce tüm seçeneklerin arka plan rengini sıfırla
-            document.querySelectorAll(`#${testSectionId} .test-options label`).forEach(label => {
-                label.classList.remove('correct', 'incorrect', 'selected');
-            });
-            
-            if (selectedOption) {
-                const answerValue = selectedOption.value;
-                if (answerValue === correctAnswer) {
-                    selectedOption.parentElement.classList.add('correct', 'selected');
-                } else {
-                    selectedOption.parentElement.classList.add('incorrect', 'selected');
-                }
-            }
+document.querySelectorAll('.test-options input').forEach(input => {
+    input.addEventListener('change', function() {
+        const testSectionId = this.name.split('-')[0];
+        const correctAnswer = answerKeys[testSectionId];
+        const selectedOption = document.querySelector(`#${testSectionId} input[name="${this.name}"]:checked`);
+        
+        // Önce tüm seçeneklerin arka plan rengini sıfırla
+        document.querySelectorAll(`#${testSectionId} .test-options label`).forEach(label => {
+            label.classList.remove('correct', 'incorrect', 'selected');
         });
+        
+        if (selectedOption) {
+            const answerValue = selectedOption.value;
+            if (answerValue === correctAnswer) {
+                selectedOption.parentElement.classList.add('correct', 'selected');
+            } else {
+                selectedOption.parentElement.classList.add('incorrect', 'selected');
+            }
+        }
     });
-}
-
-checkAnswers();
+});
 
 // Metin boyutunu ayarlama fonksiyonu
 function adjustTextSize(sectionId, adjustment) {
@@ -104,16 +100,4 @@ document.querySelectorAll('.test-header .text-size-btn').forEach(button => {
 // Varsayılan olarak ana sayfayı göster
 showSection('home');
 
-// Sayfa yüklenirken en son geçmiş olan sayfayı yükle
-document.addEventListener('DOMContentLoaded', function() {
-    const lastSection = localStorage.getItem('lastSection') || 'home';
-    showSection(lastSection);
-});
 
-// Menü öğesine tıklama ile sayfayı kaydetme
-document.querySelectorAll('.menu-item').forEach(item => {
-    item.addEventListener('click', function() {
-        const sectionId = this.getAttribute('onclick').split("'")[1];
-        localStorage.setItem('lastSection', sectionId);
-    });
-});
