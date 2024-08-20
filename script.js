@@ -45,13 +45,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Test cevabını kontrol etme fonksiyonu
 const answerKeys = {
-    home: 'A',     // Ana sayfa testi için doğru cevap
-    books: 'B',    // Kitaplar testi için doğru cevap
-    charts: 'A',   // Grafik testi için doğru cevap
-    calendar: 'A', // Takvim testi için doğru cevap
-    settings: 'A', // Ayarlar testi için doğru cevap
-    about: 'A',    // Hakkında testi için doğru cevap
-    culture: 'B'   // Kültür testi için doğru cevap
+    home: 'A',     // Yazarlar testi için doğru cevap
+    books: 'A',    // Bilim testi için doğru cevap
+    charts: 'A',   // Spor testi için doğru cevap
+    calendar: 'B', // Vefat testi için doğru cevap
+    settings: 'B', // Ödüller testi için doğru cevap
+    about: 'A',    // Kültür testi için doğru cevap
+    culture: 'A'   // İlkler testi için doğru cevap
 };
 
 document.querySelectorAll('.test-options input').forEach(input => {
