@@ -32,6 +32,7 @@ function showSection(sectionId) {
     document.querySelector(`[onclick="showSection('${sectionId}')"]`).classList.add('active');
 }
 
+
 // Test cevabını kontrol etme fonksiyonu
 const answerKeys = {
     home: 'A',     // Ana sayfa testi için doğru cevap
@@ -67,6 +68,7 @@ function handleTestOptionChange(event) {
 document.querySelectorAll('.test-options input').forEach(input => {
     input.addEventListener('change', handleTestOptionChange);
     input.addEventListener('click', handleTestOptionChange); // Mobil cihazlar için
+    input.addEventListener('touchend', handleTestOptionChange); // Mobil cihazlar için dokunma desteği
 });
 
 // Metin boyutunu ayarlama fonksiyonu
@@ -103,3 +105,4 @@ document.querySelectorAll('.test-header .text-size-btn').forEach(button => {
 
 // Varsayılan olarak ana sayfayı göster
 showSection('home');
+
