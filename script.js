@@ -32,14 +32,14 @@ function showSection(sectionId) {
     localStorage.setItem('lastVisitedSection', sectionId);
 }
 
-// Sayfa yüklendiğinde son ziyaret edilen sayfayı göster
+// Sayfa yüklendiğinde ilk olarak "Yazarlar" sayfasını, sonra son ziyaret edilen sayfayı göster
 document.addEventListener('DOMContentLoaded', function() {
     const lastVisitedSection = localStorage.getItem('lastVisitedSection');
     if (lastVisitedSection) {
         showSection(lastVisitedSection);
     } else {
-        // Varsayılan olarak ana sayfayı göster (bu satır kaldırıldı)
-        // showSection('home');
+        // Varsayılan olarak "yazarlar" sayfasını göster
+        showSection('writers');
     }
 });
 
