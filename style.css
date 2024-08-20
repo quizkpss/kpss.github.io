@@ -353,6 +353,8 @@ body.dark-mode .incorrect.selected {
     margin-bottom: 20px;
 }
 
+
+
 /* Footer ve Sosyal Medya İkonları Stilleri */
 footer.social-media-icons {
     display: flex;
@@ -370,9 +372,69 @@ footer.social-media-icons .social-icon {
     transition: color 0.3s;
 }
 
+
+   #kaybedilenler ul {
+        list-style-type: none; /* Varsayılan liste işaretlerini kaldırır */
+        padding: 0; /* İç boşluğu sıfırlar */
+    }
+    #kaybedilenler li {
+        margin-bottom: 1em; /* Her li öğesi arasında boşluk bırakır */
+        position: relative; /* İkonun konumlandırılabilmesi için */
+        padding-left: 1.5em; /* İkon ile metin arasında boşluk bırakır */
+    }
+    #kaybedilenler li::before {
+        content: '\2022'; /* Unicode nokta simgesi */
+        font-size: 1.5em; /* İkon boyutunu ayarlar */
+        position: absolute; /* İkonun konumunu ayarlar */
+        left: 0; /* İkonu sola hizalar */
+        top: 0; /* İkonu yukarı hizalar */
+        color: #000; /* İkon rengini ayarlar */
+    }
+
 footer.social-media-icons .social-icon:hover {
     color: #007bff;
 }
+
+ .info-box {
+    background-color: #f0f8ff; /* Açık mod için arka plan rengi */
+    border: 2px solid #4682b4; /* Açık mod için sınır rengi */
+    border-radius: 10px;
+    padding: 15px;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    color: #000; /* Açık mod için yazı rengi */
+  }
+
+  .info-box p,
+  .info-box ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  .info-box p {
+    font-weight: bold;
+  }
+
+  .info-box ul {
+    list-style-type: disc;
+  }
+
+  /* Karanlık mod için stiller */
+  @media (prefers-color-scheme: dark) {
+    .info-box {
+      background-color: #333; /* Karanlık mod için arka plan rengi */
+      border: 2px solid #444; /* Karanlık mod için sınır rengi */
+      color: #fff; /* Karanlık mod için yazı rengi */
+    }
+
+    .info-box p {
+      font-size: 1.2em; /* Yazı boyutu */
+    }
+
+    .info-box p,
+    .info-box ul {
+      padding-left: 0;
 
 /* Mobil Uyumlu Görsel Alanı */
 @media (max-width: 600px) {
