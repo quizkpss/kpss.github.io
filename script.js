@@ -32,14 +32,14 @@ function showSection(sectionId) {
     localStorage.setItem('lastVisitedSection', sectionId);
 }
 
-// Sayfa yüklendiğinde ilk olarak "Yazarlar" sayfasını, sonra son ziyaret edilen sayfayı göster
+// Sayfa yüklendiğinde son ziyaret edilen sayfayı göster
 document.addEventListener('DOMContentLoaded', function() {
     const lastVisitedSection = localStorage.getItem('lastVisitedSection');
     if (lastVisitedSection) {
         showSection(lastVisitedSection);
     } else {
-        // Varsayılan olarak "yazarlar" sayfasını göster
-        showSection('writers');
+        // Varsayılan olarak ana sayfayı göster
+        showSection('home'); // 'home' ID'si ile 'yazarlar' sayfasını gösterir
     }
 });
 
@@ -131,18 +131,18 @@ document.querySelectorAll('.social-media a').forEach(icon => {
     });
 });
 
-// Yukarı çık butonunu göster/gizle ve işlevselliğini ayarla
-const scrollToTopBtn = document.getElementById('scrollToTop');
+// Yukarı çık butonu gösterme ve işlevselliği
+const scrollToTopButton = document.getElementById('scrollToTop');
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) { // Sayfa 300px kaydırıldığında butonu göster
-        scrollToTopBtn.classList.add('show');
+window.addEventListener('scroll', function() {
+    if (window.scrollY > 300) {
+        scrollToTopButton.style.display = 'block';
     } else {
-        scrollToTopBtn.classList.remove('show');
+        scrollToTopButton.style.display = 'none';
     }
 });
 
-scrollToTopBtn.addEventListener('click', () => {
+scrollToTopButton.addEventListener('click', function() {
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
