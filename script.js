@@ -130,3 +130,21 @@ document.querySelectorAll('.social-media a').forEach(icon => {
         window.open(targetUrl, '_blank');
     });
 });
+
+// Yukarı çık butonunu göster/gizle ve işlevselliğini ayarla
+const scrollToTopBtn = document.getElementById('scrollToTop');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) { // Sayfa 300px kaydırıldığında butonu göster
+        scrollToTopBtn.classList.add('show');
+    } else {
+        scrollToTopBtn.classList.remove('show');
+    }
+});
+
+scrollToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
