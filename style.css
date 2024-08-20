@@ -18,6 +18,22 @@ header {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Test başlığı için stil */
+.test-header h2 {
+    font-size: 22px; /* Varsayılan font boyutu */
+    margin: 0;
+    white-space: nowrap; /* Başlığın tek satırda kalmasını sağlar */
+    overflow: hidden; /* Taşan metinleri gizler */
+    text-overflow: ellipsis; /* Taşan metni "..." ile gösterir */
+}
+
+/* Mobil uyumlu stil ayarları */
+@media (max-width: 600px) {
+    .test-header h2 {
+        font-size: 18px; /* Mobil cihazlarda daha küçük font boyutu */
+    }
+}
+
 .logo {
     display: flex;
     align-items: center;
