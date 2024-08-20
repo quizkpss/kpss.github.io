@@ -97,6 +97,22 @@ body.dark-mode .theme-switcher i {
     height: 60px;
 }
 
+
+.check-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.check-button:hover {
+    background-color: #0056b3;
+}
+
 /* Kaydırma çubuğunu gizleme */
 .menu::-webkit-scrollbar {
     display: none;
