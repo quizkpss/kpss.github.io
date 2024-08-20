@@ -43,33 +43,30 @@ const answerKeys = {
     culture: 'B'   // Kültür testi için doğru cevap
 };
 
-document.querySelectorAll('.test-options input').forEach(input => {
-    input.addEventListener('change', function() {
-        const testSectionId = this.name.split('-')[0];
-        const correctAnswer = answerKeys[testSectionId];
-        const selectedOption = document.querySelector(`#${testSectionId} input[name="${this.name}"]:checked`);
-        
-        // Önce tüm seçeneklerin arka plan rengini sıfırla
-        document.querySelectorAll(`#${testSectionId} .test-options label`).forEach(label => {
-            label.classList.remove('correct', 'incorrect', 'selected');
-        });
-        
-        if (selectedOption) {
-            const answerValue = selectedOption.value;
-            if (answerValue === correctAnswer) {
-                selectedOption.parentElement.classList.add('correct', 'selected');
-            } else {
-                selectedOption.parentElement.classList.add('incorrect', 'selected');
-            }
-        }
+function handleTestOptionChange(event) {
+    const testSectionId = event.target.name.split('-')[0];
+    const correctAnswer = answerKeys[testSectionId];
+    const selectedOption = document.querySelector(`#${testSectionId} input[name="${event.target.name}"]:checked`);
+    
+    // Önce tüm seçeneklerin arka plan rengini sıfırla
+    document.querySelectorAll(`#${testSectionId} .test-options label`).forEach(label => {
+        label.classList.remove('correct', 'incorrect', 'selected');
     });
+    
+    if (selectedOption) {
+        const answerValue = selectedOption.value;
+        if (answerValue === correctAnswer) {
+            selectedOption.parentElement.classList.add('correct', 'selected');
+        } else {
+            selectedOption.parentElement.classList.add('incorrect', 'selected');
+        }
+    }
+}
 
-    // Mobil cihazlarda anında geri bildirim için click olayını da dinle
-    input.addEventListener('click', function() {
-        if (this.checked) {
-            this.dispatchEvent(new Event('change')); // 'change' olayını tetikle
-        }
-    });
+// Olay dinleyicilerini ekleyin
+document.querySelectorAll('.test-options input').forEach(input => {
+    input.addEventListener('change', handleTestOptionChange);
+    input.addEventListener('click', handleTestOptionChange); // Mobil cihazlar için
 });
 
 // Metin boyutunu ayarlama fonksiyonu
