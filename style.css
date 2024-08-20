@@ -275,6 +275,24 @@ body.dark-mode .check-answer-btn {
     color: #fff;
 }
 
+
+
+body.dark-mode .correct.selected {
+    background-color: #004d00;
+    color: #fff;
+}
+
+body.dark-mode .incorrect.selected {
+    background-color: #6c0000;
+    color: #fff;
+}
+
+/* Görsel Alanı */
+.image-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
 /* Yukarı Çık Butonu Stilleri */
 #scrollToTop {
     position: fixed;
@@ -309,23 +327,6 @@ body.dark-mode .check-answer-btn {
 
 #scrollToTop i {
     font-size: 20px;
-}
-
-
-body.dark-mode .correct.selected {
-    background-color: #004d00;
-    color: #fff;
-}
-
-body.dark-mode .incorrect.selected {
-    background-color: #6c0000;
-    color: #fff;
-}
-
-/* Görsel Alanı */
-.image-container {
-    text-align: center;
-    margin-top: 20px;
 }
 
 .image-container img {
@@ -399,3 +400,4 @@ footer.social-media-icons .social-icon:hover {
     .logo {
         font-size: 18px;
     }
+}
